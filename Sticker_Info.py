@@ -6,6 +6,9 @@ Created on Sun May 13 18:58:18 2018
 @author: humza
 """
 
+"""
+Dictionary of all the card stickers on Telegram with their sticker id
+"""
 stickers = {'2 clubs': "CAADBAADMwADjkyzC3xhbwJiwFvjAg",
 '2 Diamonds': "CAADBAADNAADjkyzC16Y7FRChKm4Ag",
 '2 Hearts': "CAADBAADNQADjkyzCysk3LXxn5cTAg",
