@@ -7,6 +7,21 @@ Created on Sun Apr  8 17:29:15 2018
 """
 from Card_Classes import Card, Deck, Player
 
+
+class Table:
+    '''
+    A class with the orientation of the players relative to each other.
+    '''
+    def __init__(self, player1, player2, player3, player4):
+        self.bottom = player1
+        self.left = player2
+        self.top = player3
+        self.right = player4
+        
+    def __repr__(self):
+        return " {}, {}, {}, {} ".format(self.bottom, self.left, self.top, self.right)
+
+
 class Bot(Player):
     '''
     A bot for the Hearts Game.
@@ -14,7 +29,8 @@ class Bot(Player):
     def __init__(self, name):
         Player.__init__(self, name, True)
         
-    #TODO: Create an algorithm for the bot to run
+    # TODO: Create an algorithm for the bot to run
+
 
 class Game_Hearts:
     '''
@@ -47,7 +63,7 @@ class Game_Hearts:
         '''
         Distribute the cards to all players
         '''
-        cards_to_deal = self.cards[:]
+        cards_to_deal = self.deck.cards[:]
         while len(cards_to_deal) > 0:
             self.players[0].deal(cards_to_deal.pop())
             self.players[1].deal(cards_to_deal.pop())
@@ -64,11 +80,14 @@ class Game_Hearts:
         (self.players[1].score < self.points) and\
         (self.players[2].score < self.points) and\
         (self.players[3].score < self.points):
-            
-            
-
+             pass           
 
 
 if __name__ == '__main__':
-    #TODO: Create the game
-    pass
+    # TODO: Create the game
+    num = input("Number players? ")
+    game = Game_Hearts(int(num), 50)
+    game.distribute_cards()
+    print(game.deck)
+
+
